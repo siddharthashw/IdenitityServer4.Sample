@@ -12,13 +12,18 @@ using Microsoft.Extensions.Logging;
 using IdentityServer.Data;
 using IdentityServer.Models;
 using IdentityServer.Services;
+using System.Security.Cryptography.X509Certificates;
+using System.IO;
+using IdentityServer.Configuration;
 
 namespace IdentityServer
 {
     public class Startup
     {
+        private readonly IHostingEnvironment _env;
         public Startup(IHostingEnvironment env)
         {
+            _env = env;
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
@@ -57,6 +62,17 @@ namespace IdentityServer
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+            var cert = new X509Certificate2(Path.Combine(_env.ContentRootPath, "idsvr3test.pfx"),"idsrv3test");
+            // Add application services.
+            services.AddTransient<IEmailSender, AuthMessageSender>();
+            services.AddTransient<ISmsSender, AuthMessageSender>();
+             services.AddIdentityServer()
+                .AddSigningCredential(cert)
+                //.AddInMemoryIdentityResources(Config.GetIdentityResources())
+                .AddInMemoryApiResources(APIResource.GetApiResources())
+                .AddInMemoryClients(Clients.Client())
+                .AddAspNetIdentity<ApplicationUser>()
+                .AddProfileService<CustomProfileService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -83,6 +99,7 @@ namespace IdentityServer
             app.UseStaticFiles();
 
             app.UseIdentity();
+            app.UseIdentityServer();
 
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
 
