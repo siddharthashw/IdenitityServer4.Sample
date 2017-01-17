@@ -16,6 +16,7 @@ namespace IdentityServer.Configuration
                      ApiSecrets = new List<Secret> { new Secret("superSecretPassword".Sha256() )},
                      Scopes = new List<Scope>
                      {
+                         new Scope("open"),
                          new Scope("slack_user_id"),
                          new Scope(IdentityServerConstants.StandardScopes.OpenId),
                          new Scope(IdentityServerConstants.StandardScopes.Profile),

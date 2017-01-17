@@ -17,11 +17,12 @@ namespace IdentityServer.Configuration
                         AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
                         AllowAccessTokensViaBrowser = true,
                         // where to redirect to after login
-                        RedirectUris = { "http://localhost:64154/signin-oidc" },
+                        RedirectUris = { "http://localhost:58877/signin-oidc" },
                         // where to redirect to after logout
-                        PostLogoutRedirectUris = { "http://localhost:64154/" },
+                        PostLogoutRedirectUris = { "http://localhost:58877/" },
                         AllowedScopes = new List<string>
                         {
+                            "open",
                             IdentityServerConstants.StandardScopes.Email,
                             IdentityServerConstants.StandardScopes.OpenId,
                             IdentityServerConstants.StandardScopes.Profile,
@@ -44,9 +45,9 @@ namespace IdentityServer.Configuration
                     //    AllowedGrantTypes = GrantTypes.ClientCredentials,
                     //    AllowAccessTokensViaBrowser = true,
                     //    // where to redirect to after login
-                    //    RedirectUris = { "http://localhost:64154/signin-oidc" },
+                    //    RedirectUris = { "http://localhost:58877/signin-oidc" },
                     //    // where to redirect to after logout
-                    //    PostLogoutRedirectUris = { "http://localhost:64154" },
+                    //    PostLogoutRedirectUris = { "http://localhost:58877" },
                     //    AllowedScopes = new List<string>
                     //    {
                     //        "open",

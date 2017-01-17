@@ -245,6 +245,12 @@ F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Configur
 F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Configuration\Clients.cs
 F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Configuration\CustomProfileService.cs
 F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Configuration\GetIdentityResource.cs
+F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Consent\ConsentController.cs
+F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Consent\ConsentInputModel.cs
+F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Consent\ConsentOptions.cs
+F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Consent\ConsentService.cs
+F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Consent\ProcessConsentResult.cs
+F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Consent\SecurityHeadersAttribute.cs
 F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Controllers\AccountController.cs
 F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Controllers\HomeController.cs
 F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Controllers\ManageController.cs
@@ -255,6 +261,8 @@ F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Data\Mig
 F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Data\Migrations\20170117070036_application-user property.Designer.cs
 F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Data\Migrations\ApplicationDbContextModelSnapshot.cs
 F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Models\ApplicationUser.cs
+F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Models\ConsentViewModel.cs
+F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Models\ScopeViewModel.cs
 F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Models\AccountViewModels\ExternalLoginConfirmationViewModel.cs
 F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Models\AccountViewModels\ForgotPasswordViewModel.cs
 F:\Siddhartha\IdenitityServer4.Sample\IdentityServer\src\IdentityServer\Models\AccountViewModels\LoginViewModel.cs

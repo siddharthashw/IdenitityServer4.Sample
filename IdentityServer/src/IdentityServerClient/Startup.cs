@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using IdentityServerClient.Data;
 using IdentityServerClient.Models;
 using IdentityServerClient.Services;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace IdentityServerClient
 {
@@ -77,6 +78,31 @@ namespace IdentityServerClient
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            app.UseCookieAuthentication(new CookieAuthenticationOptions
+            {
+                AuthenticationScheme = "Cookies"
+            });
+
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+
+            app.UseOpenIdConnectAuthentication(new OpenIdConnectOptions
+            {
+                AuthenticationScheme = "oidc",
+                SignInScheme = "Cookies",
+                Authority = "http://localhost:58857/",
+                RequireHttpsMetadata = false,
+                ClientId = "mvc",
+                ClientSecret = "superSecretPassword",
+                ResponseType = "code id_token",
+                Scope = { "openid", "offline_access", "email", "profile", "slack_user_id" },
+                GetClaimsFromUserInfoEndpoint = true,
+                SaveTokens = true,
+                AutomaticAuthenticate = true,
+                AutomaticChallenge = true,
+                PostLogoutRedirectUri = "http://localhost:58877/",
+                UseTokenLifetime = true
+            });
 
             app.UseApplicationInsightsExceptionTelemetry();
 

@@ -66,12 +66,12 @@ namespace IdentityServer
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
-             services.AddIdentityServer()
-                .AddSigningCredential(cert)
-                //.AddInMemoryIdentityResources(Config.GetIdentityResources())
-                .AddInMemoryApiResources(APIResource.GetApiResources())
-                .AddInMemoryClients(Clients.Client())
-                .AddAspNetIdentity<ApplicationUser>()
+            services.AddIdentityServer()
+               .AddSigningCredential(cert)
+               .AddInMemoryIdentityResources(GetIdentityResource.GetIdentityResources())
+               .AddInMemoryApiResources(APIResource.GetApiResources())
+               .AddInMemoryClients(Clients.Client())
+               .AddAspNetIdentity<ApplicationUser>()
                 .AddProfileService<CustomProfileService>();
         }
 
