@@ -1,4 +1,4 @@
-﻿{
+{
   "userSecretsId": "aspnet-IdentityServerClient-5a148bfc-0b04-40a3-b2b8-eb8f48662100",
 
   "dependencies": {
@@ -6,6 +6,7 @@
       "version": "1.0.1",
       "type": "platform"
     },
+    "IdentityServer4.AccessTokenValidation":"1.0.2", 
     "Microsoft.ApplicationInsights.AspNetCore": "1.0.0",
     "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
@@ -41,10 +42,11 @@
       "version": "1.0.0-preview2-final",
       "type": "build"
     },
-    "Microsoft.VisualStudio.Web.CodeGenerators.Mvc":  {
+    "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
       "version": "1.0.0-preview2-final",
       "type": "build"
-    }
+    },
+    "Microsoft.AspNetCore.Authentication.OpenIdConnect": "1.1.0"
   },
 
   "tools": {
